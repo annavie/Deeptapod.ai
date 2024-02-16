@@ -30,6 +30,7 @@ void TextAnalyzer::generateJSON(const std::string& outputJsonFile) {
 void TextAnalyzer::WordDatabase(const std::string& databaseFile) {
     std::ifstream databaseTxt(databaseFile);
     if (!databaseTxt.is_open()) {
+        // start to use exceptions for this kind of case
         std::cerr << "Error opening database file" << std::endl;
         return;
     }
